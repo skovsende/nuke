@@ -132,6 +132,7 @@ partial class Build : NukeBuild
     Target Restore => _ => _
         .Executes(() =>
         {
+            throw new Exception();
             DotNetRestore(_ => _
                 .SetProjectFile(Solution)
                 .SetIgnoreFailedSources(IgnoreFailedSources));
